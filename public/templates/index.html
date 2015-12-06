@@ -1,0 +1,36 @@
+<div class="container-fluid image-hero">
+
+</div>
+<div class="container-fluid event-container">
+	<div class="row">
+		<div ng-repeat="event in vm.fbEvents | limitTo: 4">
+			<div class="col-md-3">
+				<span class="date-label condensed">{{event.start_time | date:'MMM dd'}}</span>
+				<a ng-href="https://www.facebook.com/events/{{event.id}}/" target="_blank"><h3>{{event.name}}</h3></a>
+				<span class="time-location condensed">Location: {{event.place.name}}</span>
+				<span class="time-location condensed">Time: {{event.start_time | date:'h a'}}</span>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="row">
+		<a href="#">View All Events</a>
+	</div> -->
+</div>
+<div class="container-fluid border-spacer">
+	<div class="section-name">
+		Latest updates
+	</div>
+</div>
+
+	<div class="container-fluid" ng-controller="InstagramController as vm">
+		<div class="row">
+			<div id="featured-instagram">
+				<div ng-repeat="instagram in vm.instagrams | limitTo: 2">
+					<div class="col-md-6">
+						<img ng-src="{{instagram.images.standard_resolution.url}}">
+						<div class="caption">{{instagram.caption.text}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
